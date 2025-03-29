@@ -13,5 +13,8 @@ BEGIN
             cod_cliente = p_cod_cliente
     ) LOOP
         dbms_output.put_line(x."Código do cliente");
+        dbms_output.put_line(x."Data do pedido");
+        dbms_output.put_line(x."Valor total do pedido");
+        dbms_output.put_line(x."---");
     END LOOP;
 END;

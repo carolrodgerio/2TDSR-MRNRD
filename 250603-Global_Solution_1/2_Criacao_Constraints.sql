@@ -90,8 +90,7 @@ ALTER TABLE dispositivo
 
 ALTER TABLE sinal
     ADD CONSTRAINT chk_tipo_sinal
-        CHECK ( tipo_sinal IN ( 'Chuva', 'Vento', 'Temperatura', 'Enchente', 'Deslizamento',
-                                'Terremoto' ) );
+        CHECK ( tipo_sinal IN ( 'Chuva', 'Vento', 'Clima', 'Enchente', 'Terremoto' ) );
 
 ALTER TABLE sinal
     ADD CONSTRAINT chk_unidade_sinal

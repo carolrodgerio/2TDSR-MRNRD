@@ -102,15 +102,15 @@ ALTER TABLE sinal
 
 ALTER TABLE solicitacao_ajuda
     ADD CONSTRAINT chk_tipo_solicitacao
-        CHECK ( tipo_solicitacao IN ( 'Resgate', 'Medicamento', 'Alimento', 'Abrigo', 'Outros' ) );
+        CHECK ( tipo_solicitacao IN ( 'Resgate', 'Saúde', 'Alimento', 'Abrigo', 'Outros' ) );
 
 ALTER TABLE solicitacao_ajuda
     ADD CONSTRAINT chk_status_solicitacao
-        CHECK ( status IN ( 'Aberto', 'Em Andamento', 'Fechado' ) );
+        CHECK ( status IN ( 'Aberto', 'Pendente', 'Fechado' ) );
 
 ALTER TABLE solicitacao_ajuda
     ADD CONSTRAINT chk_nivel_solicitacao
-        CHECK ( nivel IN ( 'Baixo', 'Médio', 'Alto', 'Crítico' ) );
+        CHECK ( nivel IN ( 'Baixo', 'Médio', 'Alto' ) );
 
 ALTER TABLE tipo_login
     ADD CONSTRAINT chk_tipo_login_descricao CHECK ( descricao IN ( 'Usuário', 'ADM' ) );

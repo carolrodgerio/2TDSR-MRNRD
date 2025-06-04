@@ -2,29 +2,35 @@
 
 CREATE OR REPLACE PROCEDURE inserir_usuario (
     p_id_usuario NUMBER,
-    p_nome VARCHAR2,
-    p_cpf VARCHAR2,
-    p_telefone VARCHAR2,
-    p_email VARCHAR2
+    p_nome       VARCHAR2,
+    p_cpf        VARCHAR2,
+    p_telefone   VARCHAR2,
+    p_email      VARCHAR2
 ) AS
 BEGIN
-    INSERT INTO usuario VALUES (
-        p_id_usuario, p_nome, p_cpf, p_telefone, p_email
-    );
+    INSERT INTO usuario VALUES ( p_id_usuario,
+                                 p_nome,
+                                 p_cpf,
+                                 p_telefone,
+                                 p_email );
+
 END;
 
 -- atualização
 
 CREATE OR REPLACE PROCEDURE atualizar_usuario (
     p_id_usuario NUMBER,
-    p_nome VARCHAR2,
-    p_email VARCHAR2
+    p_nome       VARCHAR2,
+    p_email      VARCHAR2
 ) AS
 BEGIN
     UPDATE usuario
-    SET nome = p_nome,
+    SET
+        nome = p_nome,
         email = p_email
-    WHERE id_usuario = p_id_usuario;
+    WHERE
+        id_usuario = p_id_usuario;
+
 END;
 
 -- exclusão
@@ -33,7 +39,10 @@ CREATE OR REPLACE PROCEDURE excluir_usuario (
     p_id_usuario NUMBER
 ) AS
 BEGIN
-    DELETE FROM usuario WHERE id_usuario = p_id_usuario;
+    DELETE FROM usuario
+    WHERE
+        id_usuario = p_id_usuario;
+
 END;
 
 -- execução

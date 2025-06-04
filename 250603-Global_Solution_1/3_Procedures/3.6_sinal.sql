@@ -55,13 +55,13 @@ END;
 
 BEGIN
     inserir_sinal(1, 'Chuva', 40, 'mm', systimestamp,
-                  'N', 1);
+                  'S', 1);
     inserir_sinal(2, 'Vento', 20, 'm/s', systimestamp,
                   'N', 2);
     inserir_sinal(3, 'Chuva', 30, 'mm', systimestamp,
-                  'N', 3);
+                  'S', 3);
     inserir_sinal(4, 'Enchente', 100, 'mm', systimestamp,
                   'N', 4);
     inserir_sinal(5, 'Terremoto', 10, '%', systimestamp,
-                  'N', 5);
+                  'S', 5);
 END;

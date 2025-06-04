@@ -67,7 +67,7 @@ ALTER TABLE solicitacao_ajuda
 ALTER TABLE relacionamento_usuario_alerta
     ADD CONSTRAINT usuario_fk FOREIGN KEY ( id_usuario )
         REFERENCES usuario ( id_usuario );
-        
+
 ALTER TABLE alerta
     ADD CONSTRAINT chk_tipo_alerta
         CHECK ( tipo_alerta IN ( 'Climático', 'Emergência', 'Evacuação', 'Comunicado' ) );
@@ -86,7 +86,7 @@ ALTER TABLE dispositivo
 
 ALTER TABLE dispositivo
     ADD CONSTRAINT chk_status_dispositivo
-        CHECK ( status IN ( 'Ativo', 'Inativo', 'Manutenção' ) );
+        CHECK ( status IN ( 'Ativo', 'Inativo', 'Stand-by' ) );
 
 ALTER TABLE sinal
     ADD CONSTRAINT chk_tipo_sinal
@@ -132,3 +132,7 @@ ALTER TABLE usuario
         CHECK ( email IS NULL
                 OR REGEXP_LIKE ( email,
                                  '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$' ) );
+
+ALTER TABLE dispositivo DROP CONSTRAINT dispositivo_localizacao_fk;
+
+ALTER TABLE dispositivo DROP COLUMN id_localizacao;

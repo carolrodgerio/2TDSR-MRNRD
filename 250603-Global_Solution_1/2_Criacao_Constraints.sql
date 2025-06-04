@@ -78,7 +78,7 @@ ALTER TABLE alerta
 
 ALTER TABLE alerta
     ADD CONSTRAINT chk_nivel_alerta
-        CHECK ( nivel IN ( 'Baixo', 'Médio', 'Alto', 'Crítico' ) );
+        CHECK ( nivel IN ( 'Baixo', 'Médio', 'Alto' ) );
 
 ALTER TABLE dispositivo
     ADD CONSTRAINT chk_tipo_dispositivo
@@ -90,7 +90,8 @@ ALTER TABLE dispositivo
 
 ALTER TABLE sinal
     ADD CONSTRAINT chk_tipo_sinal
-        CHECK ( tipo_sinal IN ( 'Chuva', 'Vento', 'Clima', 'Enchente', 'Terremoto' ) );
+        CHECK ( tipo_sinal IN ( 'Chuva', 'Vento', 'Clima', 'Enchente', 'Deslizamento',
+                                'Terremoto' ) );
 
 ALTER TABLE sinal
     ADD CONSTRAINT chk_unidade_sinal

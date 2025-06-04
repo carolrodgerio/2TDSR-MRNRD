@@ -19,8 +19,8 @@ CREATE TABLE dispositivo (
 
 CREATE TABLE localizacao (
     id_localizacao NUMBER(10) NOT NULL,
-    latitude       NUMBER(2, 2) NOT NULL,
-    longitude      NUMBER(2, 2) NOT NULL,
+    latitude       NUMBER(8, 6) NOT NULL,
+    longitude      NUMBER(9, 6) NOT NULL,
     descricao      VARCHAR2(100 CHAR),
     id_dispositivo NUMBER(10) NOT NULL
 );
@@ -29,7 +29,7 @@ CREATE TABLE login (
     login      VARCHAR2(15 CHAR) NOT NULL,
     senha      VARCHAR2(100 CHAR) NOT NULL,
     id_usuario NUMBER(10) NOT NULL,
-    id_tipo    NUMBER(10) NOT NULL
+    id_tipo    NUMBER(10)
 );
 
 CREATE TABLE relacionamento_sinal_disp (
@@ -64,15 +64,13 @@ CREATE TABLE solicitacao_ajuda (
 
 CREATE TABLE tipo_login (
     id_tipo   NUMBER(10) NOT NULL,
-    descricao VARCHAR2(100) NOT NULL,
-    login     VARCHAR2(15 CHAR) NOT NULL
+    descricao VARCHAR2(100) NOT NULL
 );
 
 CREATE TABLE usuario (
-    id_usuario   NUMBER(10) NOT NULL,
-    nome         VARCHAR2(50 CHAR) NOT NULL,
-    cpf          VARCHAR2(11 CHAR),
-    telefone     VARCHAR2(11 CHAR),
-    email        VARCHAR2(30 CHAR),
-    tipo_usuario VARCHAR2(10 CHAR) NOT NULL
+    id_usuario NUMBER(10) NOT NULL,
+    nome       VARCHAR2(50 CHAR) NOT NULL,
+    cpf        VARCHAR2(11 CHAR),
+    telefone   VARCHAR2(11 CHAR),
+    email      VARCHAR2(30 CHAR)
 );
